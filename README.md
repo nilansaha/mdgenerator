@@ -28,18 +28,40 @@ pip install .
 ## Usage
 
 - Generate File Tree Structure in Markdown
+	
 	- Using Python
+
 
 	```
 	from mdgenerator import generate_file_structure
+	
 	generate_file_structure(target_dir='/path/to/directory', output_dir='/output/directory')
 	```
+	
 	- Using the terminal
+
 
 	```
 	mdgenerator --target_dir "/path/to/directory" --output_dir "/output/directory"
 	```
 
+
 - Generate Markdown Table using Python
+
+	```
+	from mdgenerator import generate_table
+
+	data = [['Word_1','Word_2'],['Happy','Sad'],['Nice','Bad']]
+	table = generate_table(data)
+	print(table)
+	```
+	*Output*
+
+|Word_1|Word_2|
+|---|---|
+|Happy|Sad|
+|Nice|Bad|
+
+
 
 
