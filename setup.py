@@ -20,7 +20,7 @@ setup(
 	python_requires='>=3.6',
 	classifiers = [
 		'Programming Language :: Python'
-	]
+	],
 	entry_points = {
 		'console_scripts': [
 			'mdgenerator = mdgenerator.cli:main'
