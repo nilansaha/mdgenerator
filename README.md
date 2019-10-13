@@ -44,9 +44,21 @@ pip install .
 	```
 	mdgenerator --target_dir "/path/to/directory" --output_dir "/output/directory"
 	```
+	
+	**Output** is stored in `file_structure.md` in the specified `output_dir`
+	
+	Sample Output - 
 
+	```
+	├── .DS_Store
+	├── mdgenerator.py
+	├── __init__.py
+	├── cli.py
+	```
 
 - Generate Markdown Table using Python
+	
+	- Using Python lists
 
 	```
 	from mdgenerator import generate_table
@@ -62,6 +74,23 @@ pip install .
 	|Happy|Sad|
 	|Nice|Bad|
 
+	
+	- Using Pandas DataFrame
 
+	```
+	import pandas as pd
+	from mdgenerator import generate_table
+
+	df = pd.DataFrame([['Happy','Sad'], ['Nice','Bad']], columns = ['Word_1','Word_2'])
+	table = generate_table(df)
+	print(table)
+	```
+	**Output**
+
+	|Word_1|Word_2|
+	|---|---|
+	|Happy|Sad|
+	|Nice|Bad|
+	
 
 
