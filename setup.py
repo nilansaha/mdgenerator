@@ -1,13 +1,10 @@
 from setuptools import setup
 
-long_description = '''
-mdgenerator is a package to generate different kind of markdown texts
+with open('README.md') as f:
+	long_description = f.read()
 
-* Following details the functionality provided by the package:
-
-	- Generate File Structure Trees in Markdown
-	- Generate Tables in Markdown from pandas dataframe or python arrays
-'''
+with open('requirements.txt') as f:
+	requirements = f.readlines()
 
 setup(
 	name='mdgenerator',
@@ -15,8 +12,15 @@ setup(
 	author='Nilan Saha',
 	description = 'Package to generate different kind of markdown texts',
 	long_description = long_description,
+	long_description_content_type = 'text/markdown',
+	url = 'https://github.com/nilansaha/mdgenerator',
 	license = 'Apache 2.0',
 	packages = ['mdgenerator'],
+	install_requires = requirements,
+	python_requires='>=3.6',
+	classifiers = [
+		'Programming Language :: Python'
+	]
 	entry_points = {
 		'console_scripts': [
 			'mdgenerator = mdgenerator.cli:main'

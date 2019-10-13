@@ -49,7 +49,7 @@ pip install .
 	
 	Sample Output - 
 
-	````
+	```
 	├── .DS_Store
 	├── mdgenerator.py
 	├── __init__.py
