@@ -16,7 +16,6 @@ def generate_file_structure(target_dir, output_dir = os.getcwd()):
 	f = open("file-structure.md","w+")
 	f.write(code)
 	f.close()
-	return code
 
 def generate_table(data):
 	if isinstance(data, pd.DataFrame):
@@ -31,6 +30,3 @@ def generate_table(data):
 	table += '\n' + '|---' * len(data.columns) + '|\n'
 	table += '\n'.join(data.apply(lambda x: '|' + '|'.join(x) + '|', axis = 1))
 	return table
-
-if __name__ == "__main__":
-	print(generate_file_structure('/Users/Nilan/Desktop/mdgenerator/mdgenerator'))
