@@ -8,7 +8,7 @@ def generate_file_structure(target_dir, output_dir = os.getcwd()):
 	for root, dirs, files in os.walk("."):
 		path = root.split(os.sep)
 		if not os.path.basename(root) == ".":
-			code += ((len(path) - 1) * '|   ') + '├── ' + os.path.basename(root) + '\n'
+			code += ((len(path) - 2) * '|   ') + '├── ' + os.path.basename(root) + '\n'
 		for file in files:
 			code += ((len(path) - 1) * '|   ') + '├── ' + file + '\n'
 	code += "```"
@@ -16,6 +16,7 @@ def generate_file_structure(target_dir, output_dir = os.getcwd()):
 	f = open("file-structure.md","w+")
 	f.write(code)
 	f.close()
+	return code
 
 def generate_table(data):
 	if isinstance(data, pd.DataFrame):
@@ -31,3 +32,5 @@ def generate_table(data):
 	table += '\n'.join(data.apply(lambda x: '|' + '|'.join(x) + '|', axis = 1))
 	return table
 
+if __name__ == "__main__":
+	print(generate_file_structure('/Users/Nilan/Desktop/mdgenerator/mdgenerator'))
