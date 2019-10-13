@@ -55,12 +55,12 @@ pip install .
 	table = generate_table(data)
 	print(table)
 	```
-	*Output*
+	**Output**
 
-|Word_1|Word_2|
-|---|---|
-|Happy|Sad|
-|Nice|Bad|
+	|Word_1|Word_2|
+	|---|---|
+	|Happy|Sad|
+	|Nice|Bad|
 
 
 
